@@ -1,2 +1,3 @@
-# DevSecOps-NodeJS-ToDo-WebApp-Deployment
-Developed a NodeJS To-Do Web Application, implemented the DevSecOps practices for deploying on Docker and Kubernetes using Jenkins CI/CD Pipeline.
+# Sample Node.js application
+
+This repository is a sample Node.js application for Docker's documentation.
