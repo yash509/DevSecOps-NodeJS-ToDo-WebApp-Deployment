@@ -237,6 +237,13 @@ pipeline {
                 //}
             }
         }
+
+        stage("Anchore Grype Docker Image Vulnerability Scan"){
+            steps{
+                sh "docker run --rm anchore/grype:v0.82.0 ${IMAGE_NAME}:${TAG}"
+                sh "docker run --rm anchore/grype:v0.82.0 -o json ${IMAGE_NAME}:${TAG} > grypescanreport.json"
+            }
+        }
         
         stage('Docker Scout Artifacts Analysis') {
             steps {
