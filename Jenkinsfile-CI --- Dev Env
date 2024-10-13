@@ -227,6 +227,13 @@ pipeline {
                 //}
             }
         }
+
+        stage("Anchore Grype Docker Image Vulnerability Scan"){
+            steps{
+                sh "docker run --rm anchore/grype:v0.82.0 yash5090/nodejs-todo:latest"
+                sh "docker run --rm anchore/grype:v0.82.0 -o json yash5090/nodejs-todo:latest > grypescanreport.json"
+            }
+        }
         
         stage('Docker Scout Artifacts Analysis') {
             steps {
